@@ -1,9 +1,9 @@
-# Go to /config folder or 
-# Change this to your Home Assistant config folder if it is different
-cd /root/config
-# Add all files to the repository with respect to .gitignore rules
-git add .
-# Commit changes with message with current date stamp
-git commit -m "Auto Backup - `date +'%d-%m-%Y %H:%M:%S'`"
-# Push changes towards GitHub
-git push -u origin master
+#!/bin/bash
+{
+  echo "Starting Git backup: $(/bin/date +'%d-%m-%Y %H:%M:%S')"
+  cd /root/config || exit
+  /usr/bin/git add .
+  /usr/bin/git commit -m "Auto Backup - $(/bin/date +'%d-%m-%Y %H:%M:%S')"
+  /usr/bin/git push -u origin master
+  echo "Completed Git backup: $(/bin/date +'%d-%m-%Y %H:%M:%S')"
+} >> /root/config/git_backup.log 2>&1

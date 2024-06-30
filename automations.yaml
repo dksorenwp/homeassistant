@@ -207,9 +207,76 @@
   description: ''
   trigger:
   - platform: time
-    at: 00:00:00
+    at: '19:46'
   condition: []
   action:
   - service: shell_command.auro_backup_github
     data: {}
+  mode: single
+- id: '1719766422651'
+  alias: Alarm pushover if door sensor on
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.door_sensor_basement_entrance_opening
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.door_sensor_basement_garage_opening
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.door_sensor_upstairs_entrance_opening
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.door_sensor_upstairs_livingroom_opening
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: input_boolean.alarm_toggle_door_sensor
+    state: 'on'
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.door_sensor_basement_entrance_opening
+        state: 'on'
+      sequence:
+      - service: notify.pushover
+        data:
+          message: Basement door has been opened!
+          data:
+            sound: alarm
+            priority: 1
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.door_sensor_basement_garage_opening
+        state: 'on'
+      sequence:
+      - service: notify.pushover
+        data:
+          message: Garage door has been opened!
+          data:
+            sound: alarm
+            priority: 1
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.door_sensor_upstairs_entrance_opening
+        state: 'on'
+      sequence:
+      - service: notify.pushover
+        data:
+          message: Upstairs door has been opened!
+          data:
+            sound: alarm
+            priority: 1
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.door_sensor_upstairs_livingroom_opening
+        state: 'on'
+      sequence:
+      - service: notify.pushover
+        data:
+          message: Livingroom door has been opened!
+          data:
+            sound: alarm
+            priority: 1
   mode: single
