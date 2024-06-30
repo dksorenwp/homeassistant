@@ -18,4 +18,4 @@ http:
   login_attempts_threshold: 3
 
 shell_command:
- haGitpush: /bin/bash haGitpush.sh
+  auro_backup_github: /bin/bash haGitpush.sh
