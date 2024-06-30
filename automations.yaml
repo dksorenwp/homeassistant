@@ -202,3 +202,14 @@
     entity_id: 8266eee1e29a4297b7b5449731f381a0
     type: brightness_decrease
   mode: single
+- id: '1719761940019'
+  alias: Auto Github Backup
+  description: ''
+  trigger:
+  - platform: time
+    at: 01:00:00
+  condition: []
+  action:
+  - service: shell_command.auro_backup_github
+    data: {}
+  mode: single
