@@ -1,0 +1,204 @@
+- id: '1717869376888'
+  alias: TV power on
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: 3b43a02bf1bc79680be4a257bf7104ca
+    entity_id: c21c0ba3e89a0735bd5d3a05374e5d7c
+    domain: remote
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 0ef9557b3737740c26523c8f699ca5ce
+    entity_id: cd8f6b489d2804b9af7a40011a3f5f80
+    domain: switch
+  - type: turn_on
+    device_id: 0ef9557b3737740c26523c8f699ca5ce
+    entity_id: fe0808ba333a5be32944e6f7e54f13b7
+    domain: switch
+  mode: single
+- id: '1717869638563'
+  alias: TV power off
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_off
+    device_id: 3b43a02bf1bc79680be4a257bf7104ca
+    entity_id: c21c0ba3e89a0735bd5d3a05374e5d7c
+    domain: remote
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 0ef9557b3737740c26523c8f699ca5ce
+    entity_id: cd8f6b489d2804b9af7a40011a3f5f80
+    domain: switch
+  - type: turn_off
+    device_id: 0ef9557b3737740c26523c8f699ca5ce
+    entity_id: fe0808ba333a5be32944e6f7e54f13b7
+    domain: switch
+  mode: single
+- id: '1719682238619'
+  alias: LED-on-basement-entrance
+  description: ''
+  trigger:
+  - device_id: 9bbe3a69569184c5632fe11ef18a7a6b
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_on
+  - device_id: 51374404016280948d91087b637ba9c0
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_on
+  - device_id: 6919f8143b0df44d1ccf9615446a5e6b
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_on
+  condition: []
+  action:
+  - sequence:
+    - service: light.turn_on
+      metadata: {}
+      data: {}
+      target:
+        device_id:
+        - cdc1ff673a538d92b8b5a59ade6bafe8
+        - d5b8896ca23a0c7ebb2f2e7f0761e4be
+        - a6e66a4a2383d5792e00cfac20dd4d14
+  mode: single
+- id: '1719682338699'
+  alias: LED-off-basement-entrance
+  description: ''
+  trigger:
+  - device_id: 9bbe3a69569184c5632fe11ef18a7a6b
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_off
+  - device_id: 51374404016280948d91087b637ba9c0
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_off
+  - device_id: 6919f8143b0df44d1ccf9615446a5e6b
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_off
+  condition: []
+  action:
+  - service: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      device_id:
+      - d5b8896ca23a0c7ebb2f2e7f0761e4be
+      - a6e66a4a2383d5792e00cfac20dd4d14
+      - cdc1ff673a538d92b8b5a59ade6bafe8
+  mode: single
+- id: '1719683094412'
+  alias: LED-autro-on-basement-entrance
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 7f9654082f0f9d08204e05cb7f09a5cc
+    domain: lock
+    entity_id: a57bd07d212e7d65be02adff82abe03e
+    type: opening
+  condition: []
+  action:
+  - service: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      device_id: d5b8896ca23a0c7ebb2f2e7f0761e4be
+  - delay:
+      hours: 0
+      minutes: 5
+      seconds: 0
+      milliseconds: 0
+  - service: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      device_id: d5b8896ca23a0c7ebb2f2e7f0761e4be
+  mode: single
+- id: '1719685286961'
+  alias: LED-on-upstairs--bedroom1
+  description: ''
+  trigger:
+  - device_id: c8793579f8d2486c10eaff8727395250
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_on
+  condition: []
+  action:
+  - service: light.turn_on
+    metadata: {}
+    data:
+      kelvin: 6500
+      brightness_pct: 85
+    target:
+      entity_id: light.led_group1_upstairs_bedroom1
+  mode: single
+- id: '1719685344353'
+  alias: LED-off-upstairs-bedroom1
+  description: ''
+  trigger:
+  - device_id: c8793579f8d2486c10eaff8727395250
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_off
+  condition: []
+  action:
+  - service: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: light.led_group1_upstairs_bedroom1
+  mode: single
+- id: '1719685952608'
+  alias: LED-dimup-upstairs-bedroom1
+  description: ''
+  trigger:
+  - device_id: c8793579f8d2486c10eaff8727395250
+    domain: zha
+    platform: device
+    type: remote_button_long_press
+    subtype: dim_up
+  condition: []
+  action:
+  - device_id: 3e8a35400510f208eb18b755d4028f1c
+    domain: light
+    entity_id: e6873dfdf8ce30e042c0bb0387d36072
+    type: brightness_increase
+  - device_id: 84be21a8d6c98de9b72dadb67620c365
+    domain: light
+    entity_id: 8266eee1e29a4297b7b5449731f381a0
+    type: brightness_increase
+  mode: single
+- id: '1719686072629'
+  alias: LED-dimdown-upstairs-bedroom1
+  description: ''
+  trigger:
+  - device_id: c8793579f8d2486c10eaff8727395250
+    domain: zha
+    platform: device
+    type: remote_button_long_press
+    subtype: dim_down
+  condition: []
+  action:
+  - device_id: 3e8a35400510f208eb18b755d4028f1c
+    domain: light
+    entity_id: e6873dfdf8ce30e042c0bb0387d36072
+    type: brightness_decrease
+  - device_id: 84be21a8d6c98de9b72dadb67620c365
+    domain: light
+    entity_id: 8266eee1e29a4297b7b5449731f381a0
+    type: brightness_decrease
+  mode: single
