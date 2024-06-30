@@ -207,7 +207,7 @@
   description: ''
   trigger:
   - platform: time
-    at: 01:00:00
+    at: 00:00:00
   condition: []
   action:
   - service: shell_command.auro_backup_github
