@@ -1,0 +1,311 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Home",
+          "cards": [
+            {
+              "type": "picture-elements",
+              "image": "https://api.sorenwp.dk/homeassistant/img/floorplan/floorplan.svg",
+              "elements": [
+                {
+                  "type": "state-icon",
+                  "entity": "light.",
+                  "style": {
+                    "top": "58%",
+                    "left": "3%"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "lock.z_wave_controlled_door_lock_with_bluetooth_smart",
+                  "style": {
+                    "top": "7%",
+                    "left": "50%"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "lock.z_wave_controlled_door_lock_with_bluetooth_smart",
+                  "style": {
+                    "top": "85%",
+                    "left": "33.7%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_upstairs_kitchen_temperature",
+                  "style": {
+                    "top": "19%",
+                    "left": "20%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_upstairs_hallway_temperature",
+                  "style": {
+                    "top": "44%",
+                    "left": "63%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_upstairs_toilet_temperature",
+                  "style": {
+                    "top": "18%",
+                    "left": "63%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_upstairs_guestroom_temperature",
+                  "style": {
+                    "top": "25%",
+                    "left": "90%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_upstairs_livingroom_temperature",
+                  "style": {
+                    "top": "62%",
+                    "left": "20%"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.led_group1_upstairs_bedroom1",
+                  "style": {
+                    "top": "74%",
+                    "left": "83%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_upstairs_bedroom1_temperature",
+                  "style": {
+                    "top": "81%",
+                    "left": "84%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_upstairs_bedroom2_temperature",
+                  "style": {
+                    "top": "75%",
+                    "left": "55%"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "picture-elements",
+              "image": "https://api.sorenwp.dk/homeassistant/img/floorplan/basement-floorplan.svg",
+              "elements": [
+                {
+                  "type": "state-icon",
+                  "entity": "light.office_led01_light",
+                  "style": {
+                    "top": "43%",
+                    "left": "3%"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "lock.z_wave_controlled_door_lock_with_bluetooth_smart",
+                  "style": {
+                    "top": "41%",
+                    "left": "96%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_basement_office_temperature",
+                  "style": {
+                    "top": "63%",
+                    "left": "20%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_basement_hallway_temperature",
+                  "style": {
+                    "top": "44%",
+                    "left": "63%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_basement_toilet_temperature",
+                  "style": {
+                    "top": "18%",
+                    "left": "63%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_basement_entrance_temperature",
+                  "style": {
+                    "top": "25%",
+                    "left": "90%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_basement_garage_temperature",
+                  "style": {
+                    "top": "76%",
+                    "left": "70%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_basement_laundry_temperature",
+                  "style": {
+                    "top": "8.4%",
+                    "left": "49.7%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_basement_storage1_temperature",
+                  "style": {
+                    "top": "18%",
+                    "left": "33%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_basement_storage2_temperature",
+                  "style": {
+                    "top": "18%",
+                    "left": "12%"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "input_boolean.alarm_toggle1_house",
+                  "name": "Door Sensor",
+                  "icon": "mdi:door-closed-cancel"
+                }
+              ],
+              "title": "Alarm"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "input_boolean.alarm_toggle1_house",
+                  "name": "Door Sensor",
+                  "icon": "mdi:door-closed-cancel"
+                }
+              ],
+              "title": "Alarm"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "title": "Basement",
+          "path": "basement",
+          "cards": [
+            {
+              "type": "picture-elements",
+              "image": "https://api.sorenwp.dk/homeassistant/img/floorplan/basement-floorplan.svg",
+              "elements": [
+                {
+                  "type": "state-icon",
+                  "entity": "light.office_led01_light",
+                  "style": {
+                    "top": "43%",
+                    "left": "3%"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "lock.z_wave_controlled_door_lock_with_bluetooth_smart",
+                  "style": {
+                    "top": "41%",
+                    "left": "96%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_basement_office_temperature",
+                  "style": {
+                    "top": "63%",
+                    "left": "20%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_basement_hallway_temperature",
+                  "style": {
+                    "top": "44%",
+                    "left": "63%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_basement_toilet_temperature",
+                  "style": {
+                    "top": "18%",
+                    "left": "63%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_basement_entrance_temperature",
+                  "style": {
+                    "top": "25%",
+                    "left": "90%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_basement_garage_temperature",
+                  "style": {
+                    "top": "76%",
+                    "left": "70%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_basement_laundry_temperature",
+                  "style": {
+                    "top": "8.4%",
+                    "left": "49.7%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_basement_storage1_temperature",
+                  "style": {
+                    "top": "18%",
+                    "left": "33%"
+                  }
+                },
+                {
+                  "type": "state-label",
+                  "entity": "sensor.temperature_sensor_basement_storage2_temperature",
+                  "style": {
+                    "top": "18%",
+                    "left": "12%"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
