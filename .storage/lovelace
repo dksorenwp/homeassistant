@@ -192,12 +192,20 @@
               "type": "entities",
               "entities": [
                 {
-                  "entity": "input_boolean.alarm_toggle1_house",
+                  "entity": "input_boolean.alarm_toggle_door_sensor",
                   "name": "Door Sensor",
                   "icon": "mdi:door-closed-cancel"
                 }
               ],
               "title": "Alarm"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "binary_sensor.alarm_group_door_sensor"
+                }
+              ]
             }
           ]
         },

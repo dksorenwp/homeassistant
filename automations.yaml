@@ -39,7 +39,7 @@
     domain: switch
   mode: single
 - id: '1719682238619'
-  alias: LED-on-basement-entrance
+  alias: LED on basement entrance
   description: ''
   trigger:
   - device_id: 9bbe3a69569184c5632fe11ef18a7a6b
@@ -70,7 +70,7 @@
         - a6e66a4a2383d5792e00cfac20dd4d14
   mode: single
 - id: '1719682338699'
-  alias: LED-off-basement-entrance
+  alias: LED off basement entrance
   description: ''
   trigger:
   - device_id: 9bbe3a69569184c5632fe11ef18a7a6b
@@ -100,7 +100,7 @@
       - cdc1ff673a538d92b8b5a59ade6bafe8
   mode: single
 - id: '1719683094412'
-  alias: LED-autro-on-basement-entrance
+  alias: LED auto on basement entrance
   description: ''
   trigger:
   - platform: device
@@ -127,7 +127,7 @@
       device_id: d5b8896ca23a0c7ebb2f2e7f0761e4be
   mode: single
 - id: '1719685286961'
-  alias: LED-on-upstairs--bedroom1
+  alias: LED on upstairs bedroom1
   description: ''
   trigger:
   - device_id: c8793579f8d2486c10eaff8727395250
@@ -146,7 +146,7 @@
       entity_id: light.led_group1_upstairs_bedroom1
   mode: single
 - id: '1719685344353'
-  alias: LED-off-upstairs-bedroom1
+  alias: LED off upstairs bedroom1
   description: ''
   trigger:
   - device_id: c8793579f8d2486c10eaff8727395250
@@ -163,7 +163,7 @@
       entity_id: light.led_group1_upstairs_bedroom1
   mode: single
 - id: '1719685952608'
-  alias: LED-dimup-upstairs-bedroom1
+  alias: LED dimup upstairs bedroom1
   description: ''
   trigger:
   - device_id: c8793579f8d2486c10eaff8727395250
@@ -183,7 +183,7 @@
     type: brightness_increase
   mode: single
 - id: '1719686072629'
-  alias: LED-dimdown-upstairs-bedroom1
+  alias: LED dimdown upstairs bedroom1
   description: ''
   trigger:
   - device_id: c8793579f8d2486c10eaff8727395250
