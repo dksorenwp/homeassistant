@@ -1,3 +1,11 @@
+# Custom list
+.ssh/
+id_rsa*
+zigbee.db
+zigbee.db-*
+!.storage/lovelace
+
+
 # Created by https://www.toptal.com/developers/gitignore/api/homeassistant
 # Edit at https://www.toptal.com/developers/gitignore?templates=homeassistant
 
@@ -46,11 +54,3 @@ ozw_log.txt
 custom_components
 
 # End of https://www.toptal.com/developers/gitignore/api/homeassistant
-
-
-# Custom list
-.ssh/
-id_rsa*
-zigbee.db
-zigbee.db-*
-!.storage/lovelace
