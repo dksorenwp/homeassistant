@@ -3,7 +3,7 @@
 id_rsa*
 zigbee.db
 zigbee.db-*
-!.storage/lovelace*
+!.storage/lovelace
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/homeassistant
@@ -17,7 +17,7 @@ zigbee.db-*
 .cloud
 .google.token
 .HA_VERSION
-.storage
+.storage/*
 .uuid
 icloud/
 google_calendars.yaml
