@@ -269,3 +269,14 @@
             sound: alarm
             priority: 1
   mode: single
+- id: '1720216232852'
+  alias: Auto Backup Github
+  description: Night Push to Github
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition: []
+  action:
+  - service: shell_command.hagitbackup
+    data: {}
+  mode: single
