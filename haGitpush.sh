@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Set core.sshCommand for Git to use specific SSH key and known_hosts file
-git config core.sshCommand "ssh -i /config/.ssh/id_rsa -o UserKnownHostsFile=/config/.ssh/known_hosts -F /dev/null"
-# Add all files to the repository respecting .gitignore rules
+# Go to /config folder or change this to your Home Assistant config folder if it is different
+cd /root/config
 
+# Add all files to the repository respecting .gitignore rules
 git add .
 
 # Commit changes with a message including the current date and time stamp
