@@ -7,4 +7,4 @@ git add .
 git commit -m "Auto Backup - $(date +'%d-%m-%Y %H:%M:%S')"
 
 # Push changes to GitHub (assuming 'origin' points to your GitHub repository and 'master' is your branch)
-git push -u origin master
+GIT_SSH_COMMAND="ssh -i /config/.ssh/id_rsa -o UserKnownHostsFile=/config/.ssh/known_hosts" git push -u origin master

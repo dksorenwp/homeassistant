@@ -19,5 +19,4 @@ http:
 
 
 shell_command:
-  hagitbackup: ./haGitpush.sh
-
+  hagitbackup: sh haGitpush.sh
