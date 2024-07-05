@@ -3,6 +3,10 @@
 # Debug: Log file path
 LOG_FILE="/config/gitPush.log"
 
+# Set environment variables (adjust as necessary)
+export PATH=/usr/local/bin:/usr/bin:/bin
+export HOME=/root
+
 # Start SSH agent (if not already started)
 eval $(ssh-agent -s)
 
@@ -12,7 +16,7 @@ ssh-add /config/.ssh/id_rsa
 # Wait for a moment to ensure key is added (optional)
 sleep 1
 
-# Set core.sshCommand for Git to use specific SSH key and ignore SSH configuration
+# Set core.sshCommand for Git to use specific SSH key and known_hosts file
 git config core.sshCommand "ssh -i /config/.ssh/id_rsa -o UserKnownHostsFile=/config/.ssh/known_hosts -F /dev/null"
 
 # Debug: Print date and time of script execution
@@ -37,7 +41,15 @@ echo "Current directory: $(pwd)" >> "$LOG_FILE"
 /usr/bin/git push -u origin master >> "$LOG_FILE" 2>&1
 
 # Debug: Print git push output
-echo "Git push exit code: $?" >> "$LOG_FILE"
+PUSH_EXIT_CODE=$?
+echo "Git push exit code: $PUSH_EXIT_CODE" >> "$LOG_FILE"
+
+# Debug: Print SSH debug information
+echo "SSH debug information:" >> "$LOG_FILE"
+ssh -vT git@github.com >> "$LOG_FILE" 2>&1
 
 # Debug: Print date and time of script completion
 echo "Script execution completed at $(date)" >> "$LOG_FILE"
+
+# Exit with the push exit code
+exit $PUSH_EXIT_CODE
