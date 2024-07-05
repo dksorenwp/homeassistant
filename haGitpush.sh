@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Set core.sshCommand for Git to use specific SSH key and ignore SSH configuration
+git config core.sshCommand "ssh -i /config/.ssh/id_rsa -F /dev/null"
+
 # Add all files to the repository respecting .gitignore rules
 git add .
 
@@ -7,4 +10,4 @@ git add .
 git commit -m "Auto Backup - $(date +'%d-%m-%Y %H:%M:%S')"
 
 # Push changes to GitHub (assuming 'origin' points to your GitHub repository and 'master' is your branch)
-GIT_SSH_COMMAND="ssh -i /config/.ssh/id_rsa -o UserKnownHostsFile=/config/.ssh/known_hosts" git push -u origin master
+git push -u origin master
