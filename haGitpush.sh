@@ -13,7 +13,7 @@ ssh-add /config/.ssh/id_rsa
 sleep 1
 
 # Set core.sshCommand for Git to use specific SSH key and ignore SSH configuration
-git config core.sshCommand "ssh -i /config/.ssh/id_rsa -F /dev/null"
+git config core.sshCommand "ssh -i /config/.ssh/id_rsa -o UserKnownHostsFile=/config/.ssh/known_hosts -F /dev/null"
 
 # Debug: Print date and time of script execution
 echo "Script execution started at $(date)" >> "$LOG_FILE"
