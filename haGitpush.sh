@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Go to /config folder or change this to your Home Assistant config folder if it is different
-cd /root/config
-
 # Add all files to the repository respecting .gitignore rules
 git add .
 
