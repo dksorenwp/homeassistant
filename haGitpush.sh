@@ -3,11 +3,20 @@
 # Debug: Log file path
 LOG_FILE="/config/gitPush.log"
 
-# Debug: Print date and time of script execution
-echo "Script execution started at $(date)" >> "$LOG_FILE"
+# Start SSH agent (if not already started)
+eval $(ssh-agent -s)
+
+# Add SSH key to agent
+ssh-add /config/.ssh/id_rsa
+
+# Wait for a moment to ensure key is added (optional)
+sleep 1
 
 # Set core.sshCommand for Git to use specific SSH key and ignore SSH configuration
 git config core.sshCommand "ssh -i /config/.ssh/id_rsa -F /dev/null"
+
+# Debug: Print date and time of script execution
+echo "Script execution started at $(date)" >> "$LOG_FILE"
 
 # Debug: Print current directory
 echo "Current directory: $(pwd)" >> "$LOG_FILE"
