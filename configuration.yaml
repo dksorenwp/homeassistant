@@ -19,5 +19,5 @@ http:
 
 
 shell_command:
-  hagitbackup: git add . && git commit -m "Auto Backup - $(date +'\%d-\%m-\%Y \%H:\%M:\%S')" && git push -u origin master
+  hagitbackup: ./haGitpush.sh
 
