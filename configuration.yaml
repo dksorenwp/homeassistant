@@ -16,3 +16,8 @@ http:
     - 172.30.33.0/24
   ip_ban_enabled: true
   login_attempts_threshold: 3
+
+
+shell_command:
+  hagitbackup: git add . && git commit -m "Auto Backup - $(date +'\%d-\%m-\%Y \%H:\%M:\%S')" && git push -u origin master
+
