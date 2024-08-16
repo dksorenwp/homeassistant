@@ -214,6 +214,43 @@
                   "entity": "binary_sensor.alarm_group_door_sensor"
                 }
               ]
+            },
+            {
+              "type": "custom:button-card",
+              "name": "Pregnancy Week",
+              "show_state": false,
+              "aspect_ratio": "1/1",
+              "styles": {
+                "card": [
+                  {
+                    "padding": "5px"
+                  },
+                  {
+                    "font-size": "16px"
+                  },
+                  {
+                    "background-color": "white"
+                  },
+                  {
+                    "background-image": "[[[\n  fetch('https://vallar.se/homeassistant/pregnant/json.php')\n    .then(response => response.json())\n    .then(data => {\n      const weeks = data.pregnant.weeks;\n      const img_url = `https://images.agoramedia.com/wte3.0/gcms/wbw-${weeks}-fruit.png`;\n      document.getElementById('pregnancy-image').style.backgroundImage = `url(${img_url})`;\n    })\n    .catch(error => console.log('Error fetching data:', error));\n]]]\n"
+                  }
+                ],
+                "custom_fields": {
+                  "img_field": {
+                    "card": {
+                      "type": "custom:hui-image-element",
+                      "image": "https://via.placeholder.com/150",
+                      "id": "pregnancy-image",
+                      "aspect_ratio": "1/1",
+                      "style": {
+                        "height": "100%",
+                        "width": "100%",
+                        "object-fit": "cover"
+                      }
+                    }
+                  }
+                }
+              }
             }
           ]
         },
