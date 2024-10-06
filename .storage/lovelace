@@ -251,6 +251,16 @@
                   }
                 }
               }
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "light.gastrom_light",
+                  "name": "Light"
+                }
+              ],
+              "title": "Gæstrom"
             }
           ]
         },
