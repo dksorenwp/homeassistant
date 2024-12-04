@@ -256,16 +256,6 @@
               "type": "entities",
               "entities": [
                 {
-                  "entity": "light.gastrom_light",
-                  "name": "Light"
-                }
-              ],
-              "title": "Gæstrom"
-            },
-            {
-              "type": "entities",
-              "entities": [
-                {
                   "entity": "sensor.t_h_sensor_humidity",
                   "name": "Humidity"
                 },
@@ -275,6 +265,16 @@
                 }
               ],
               "title": "T & H Sensor"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "switch.control_outlet_switch",
+                  "name": "Switch"
+                }
+              ],
+              "title": "control outlet"
             }
           ]
         },
